@@ -1,0 +1,11 @@
+//Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+
+//Custom styles
+body {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}

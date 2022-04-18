@@ -1,0 +1,122 @@
+//Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+//Fonts
+@font-face {
+    font-family: 'Courier New';
+    src: local('Courier New Bold'), local('Courier-New-Bold'),
+    url('/fonts/CourierNewPS-BoldMT/CourierNewPS-BoldMT.woff2') format('woff2'),
+    url('/fonts/CourierNewPS-BoldMT/CourierNewPS-BoldMT.woff') format('woff'),
+    url('/fonts/CourierNewPS-BoldMT/CourierNewPS-BoldMT.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+//Custom styles
+  body {
+      height: 100vh;
+      display: flex;
+      flex-wrap: wrap;
+      background: rgb(40,40,40);
+  }
+
+header {
+    height: fit-content;
+    position: absolute;
+}
+
+.log-in {
+    display: inline-block;
+    box-shadow: inset 0 0 5px 0 $yellow;
+    transition: color 0.15s 0.1s, box-shadow 0.3s ease-in-out;
+    color: $white;
+    border: 1px solid $white;
+    border-radius: 0.25rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    user-select: none;
+    background-color: transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+}
+
+.log-in:hover {
+    box-shadow: inset 0 0 15px 20px $yellow;
+    border-color: $yellow;
+    color: $black;
+}
+
+.sign-up {
+    transition: box-shadow 0.2s;
+    padding: 7px 13px;
+    border:none;
+}
+
+.sign-up:hover {
+    box-shadow: inset 0 0 5px 1px $black;
+}
+
+main {
+    min-height: 100%;
+}
+
+section {
+    min-height: 100%;
+    background: rgb(40,40,40);
+}
+
+
+.main-image {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    .slogan {
+        color: $white;
+        margin-right: 5%;
+        font-size: 5rem;
+        font-weight: 700;
+        font-family: monospace;
+        max-width: 450px;
+        user-select: none;
+        line-height: 85px;
+        transition: 0.3s;
+        span {
+            font-size: 3.5rem;
+        }
+    }
+    .go-down {
+        transition: bottom 0.3s;
+        color: $white;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        font-size: 3.5rem;
+        cursor: pointer;
+        @include media-breakpoint-down(xl) {
+            font-size: 2rem
+        }
+
+    }
+    .go-down:hover {
+        bottom: 20px;
+    }
+    .go-down:before {
+        content: "\f119";
+    }
+    .go-down:hover:before {
+        content: "\f118";
+    }
+}
+
+#about-us {
+}
