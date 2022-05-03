@@ -9,9 +9,8 @@ class HomeController extends Controller
 {
     public function index(Request $request) {
         $user = Auth::user();
-        if (!empty($user))
-            return view('pages.home');
-        else
+        if (empty($user))
             return view('pages.guest');
+        return view('pages.home');
     }
 }
