@@ -95,6 +95,8 @@ return [
 
     'fallback_locale' => 'en',
 
+    'lang_cookie_name' => 'lang',
+
     /*
     |--------------------------------------------------------------------------
     | Faker Locale

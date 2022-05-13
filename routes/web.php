@@ -14,3 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
+Route::get('/dashboard', 'App\Http\Controllers\HomeController@index')->middleware(['auth'])->name('dashboard');
+
+Route::get('/lang/{lang}', 'App\Http\Controllers\LangController@changeLang')->name('lang');
+
+Route::get('/songs', 'App\Http\Controllers\SongsController@show')->middleware(['auth'])->name('songs');
+Route::get('/albums', 'App\Http\Controllers\AlbumsController@show')->middleware(['auth'])->name('albums');
+Route::get('/artists', 'App\Http\Controllers\ArtistsController@show')->middleware(['auth'])->name('artists');
+
+require __DIR__.'/auth.php';

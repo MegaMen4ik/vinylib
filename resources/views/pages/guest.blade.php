@@ -46,9 +46,23 @@
                         <a class="nav-link" id="nav-contact-us" href="#contact-us">{{trans('guest.contact_us')}}</a>
                     </li>
                 </ul>
-                <div>
-                    <a type="button" class="log-in" href="https://google.com">{{trans('guest.login')}}</a>
-                    <button type="button" class="btn btn-warning sign-up">{{trans('guest.signup')}}</button>
+                <div class="d-flex align-items-center">
+                    <div id="locale-block">
+                        <i class="bi bi-translate" id="locale"></i>
+                        <div class="locale-content">
+                            <div class="locale-list">
+                                @foreach($locales as $locale => $value)
+                                    <div class="locale-item">
+                                        <a href="{{route('lang', ['lang' => $value['code']])}}">
+                                            <i class="fi fi-{{$value['flag']}}"></i>{{$value['name']}}
+                                        </a>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    <a type="button" class="log-in" href="{{route('login')}}">{{trans('guest.login')}}</a>
+                    <a type="button" class="btn btn-warning sign-up" href="{{route('register')}}">{{trans('guest.signup')}}</a>
                 </div>
             </div>
         </div>
@@ -141,9 +155,11 @@
     let nav_why_we = document.getElementById('nav-why-we').classList;
     let nav_pricing = document.getElementById('nav-pricing').classList;
     let nav_contact_us = document.getElementById('nav-contact-us').classList;
+    let locale = document.getElementById('locale-block').classList;
     function checkscroll() {
         if(window.scrollY + 10 >= about_us && !header.classList.contains("position-fixed")) {
             header.classList.add("position-fixed");
+            locale.add('d-none');
         }
         if(window.scrollY >= about_us && window.scrollY < why_we && !nav_about_us.contains('active')) {
             nav_about_us.add('active');
@@ -162,6 +178,7 @@
         }
         else if(window.scrollY + 10 < about_us && header.classList.contains("position-fixed")) {
             header.classList.remove("position-fixed");
+            locale.remove('d-none');
             nav_about_us.remove('active');
         }
     }
@@ -181,6 +198,7 @@
         setTimeout(function () {
             document.body.classList.add('load');
         }, 1000)
+        console.log('{{$localer}}', '{{$localet}}')
     }
     window.onscroll = function() {
         if(document.body.classList.contains('load')) {
