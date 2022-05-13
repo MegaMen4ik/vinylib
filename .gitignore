@@ -5,6 +5,7 @@
 /public/storage
 /public/fonts/vendor
 /public/.htaccess
+/public/images/vendor
 /storage/*.key
 /vendor
 .env
