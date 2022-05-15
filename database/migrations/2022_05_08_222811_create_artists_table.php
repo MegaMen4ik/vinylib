@@ -19,6 +19,7 @@ class CreateArtistsTable extends Migration
             $table->string('surname');
             $table->string('pseudonym')->nullable();
             $table->date('birth_date')->nullable();
+            $table->timestamps();
         });
     }
 

@@ -17,7 +17,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('/images/icons/favicon/favicon-32x32.png')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('/images/icons/favicon/favicon-16x16.png')}}">
     <link rel="manifest" href="{{asset('/images/icons/favicon/site.webmanifest')}}">
-
 </head>
 <body class="font-sans antialiased">
 <!-- Page Heading -->
@@ -25,7 +24,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark" >
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="{{asset('images/icons/vinyl-record.png')}}" alt="" height="24">
+                <img src="{{asset('images/icons/vinyl-record.png')}}" alt="" width="24">
                 {{config('app.name')}}
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

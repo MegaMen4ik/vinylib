@@ -15,10 +15,16 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="{{asset('/images/icons/favicon/apple-touch-icon.png')}}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{asset('/images/icons/favicon/favicon-32x32.png')}}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{asset('/images/icons/favicon/favicon-16x16.png')}}">
+        <link rel="manifest" href="{{asset('/images/icons/favicon/site.webmanifest')}}">
     </head>
-    <body class="font-sans antialiased">
+    <body>
         <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
 
             <!-- Page Heading -->
             <x-header/>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLikedListTable extends Migration
+class ChangesSongsLenghtTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateLikedListTable extends Migration
      */
     public function up()
     {
-        Schema::create('liked_list', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->string('model_name');
-            $table->unsignedBigInteger('object_id');
-            $table->timestamps();
+        Schema::table('songs', function (Blueprint $table) {
+            $table->unsignedBigInteger('length')->after('band_id')->nullable(true);
         });
     }
 
@@ -29,6 +25,8 @@ class CreateLikedListTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('liked_list');
+        Schema::table('songs', function (Blueprint $table) {
+            $table->dropColumn('length');
+        });
     }
 }

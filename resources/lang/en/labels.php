@@ -15,5 +15,11 @@ return [
 
     'who_we' => '&laquo; Previous',
     'next' => 'Next &raquo;',
-
+    'pages' => [
+        'songs' => 'Song',
+        'albums' => 'Album',
+        'artists' => 'Artist',
+        'bands' => 'Band',
+        'profiles' => 'Profiles'
+    ]
 ];

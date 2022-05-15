@@ -2,10 +2,28 @@
 @import '~bootstrap/scss/bootstrap';
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
+//Fonts
+@font-face {
+    font-family: 'Courier New';
+    src: local('Courier New Bold'), local('Courier-New-Bold'),
+    url('/fonts/CourierNewPS-BoldMT/CourierNewPS-BoldMT.woff2') format('woff2'),
+    url('/fonts/CourierNewPS-BoldMT/CourierNewPS-BoldMT.woff') format('woff'),
+    url('/fonts/CourierNewPS-BoldMT/CourierNewPS-BoldMT.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
 
 //Custom styles
 body {
-    height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
+    min-width: 480px;
+}
+.navbar-brand {
+    img {
+        display: inline-block;
+    }
+}
+
+.main-block {
+    max-width: 1200px;
+    margin:auto;
 }

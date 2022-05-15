@@ -18,6 +18,7 @@ class CreateAlbumsTable extends Migration
             $table->string('name');
             $table->unsignedBigInteger('artist_id')->nullable();
             $table->date('release_date')->nullable();
+            $table->timestamps();
         });
     }
 
